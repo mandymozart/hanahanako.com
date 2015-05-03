@@ -255,11 +255,15 @@ class Page
 	public function sec_password()
 	{
 		$out = "<form name='ndxz_protect' id='ndxz-protect' method='post' action=''>\n";
-		$out .= "<p>Password Protected Section</p>\n";
+        $out .= "<div id='ndxz_protected_inner'>";
+        $out .= "<h2>&#8621;</h2>\n";
+		$out .= "<h2>Welcome</h2>\n";
 		$out .= "<p>Enter Password</p>\n";
 		$out .= "<p><input name='ndxz_sec_pwd' type='text' maxlength='12' /></p>\n";
 		$out .= "<p><input name='ndxz_hid' type='hidden' value='' /></p>\n";
-		$out .= "<p><input name='ndxz_sec_pwd_sbmt' type='submit' value='submit' /></p>\n";
+		$out .= "<p><input name='ndxz_sec_pwd_sbmt' type='submit' value='Login' /></p>\n";
+        $out .= "</div>";
+        $out .= "<p id='dialog-close'><a href='../'>&#8592; Back</a></p>";
 		$out .= "</form>\n";
 		
 		return $out;
@@ -277,7 +281,7 @@ class Page
 		$out = "<form name='ndxz_protect' id='ndxz-protect' method='post' action=''>\n";
 		
 		// this can be changed via a plugin (need to make the plugin)
-		$out .= "<p>Password Protected Page (enter password):</p>\n";
+		$out .= "<p>Welcome (enter password):</p>\n";
 
 		$out .= "<div id='ndxz_pwd'><input name='ndxz_pwd' type='text' maxlength='12' /></div>\n";
 		$out .= "<div id='ndxz_pwd_sbmt'><button name='ndxz_pwd_sbmt' type='submit' />Submit</button></div>\n";

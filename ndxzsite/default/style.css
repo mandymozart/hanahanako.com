@@ -6,22 +6,29 @@
 *
 * There are also some obscure rules in base.css
 */
-
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);
 body {
 	font-size: 13px;
-	font-family: 'Helvetica Neue', Arial, Helvetica, Verdana, sans-serif;
+	font-family: 'Merriweather', Arial, Helvetica, Verdana, sans-serif;
 	background: #fff;
 	color: #000;
-	line-height: 1.3em;
+    font-weight: 300;
+	line-height: 1.6em;
 	/* font-weight: 300; */
 }
 
 /* link scheme */
 /* you can customize links further down the page too */
-a:link { text-decoration: none; color: #000; }
+a:link {
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    text-decoration: none; color: #f00; }
 a:active { text-decoration: none; color: #00cc00; }
-a:visited { text-decoration: none; color: #999; }
-a:hover { text-decoration: underline; }
+a:visited { text-decoration: none; color: #000; }
+a:hover { text-decoration: none; color: #000;}
 a img { border: none; }
 
 /* general styles */
@@ -30,10 +37,28 @@ code { font-family: monospace; }
 blockquote { padding-left: 9px; }
 
 /* headings */
-h1 { font-size: 13px; margin-bottom: 1em; font-weight: bold; }
-h2 { font-size: 13px; margin-bottom: 1em; font-weight: bold; }
-h3 { font-size: 13px; margin-bottom: 1em; }
-h4 { font-size: 13px; margin-bottom: 1em; }
+h1 {
+    margin-bottom: 1em;
+    font-family: 'Montserrat';
+    font-size: 49px;
+    line-height: 33px;
+    text-transform: lowercase;
+    color: #000;
+    font-weight: 400;
+}
+h1 a {
+    color:#000;
+}
+h1 a:hover,
+h1 a:visited {
+    text-decoration: none !important;
+}
+h1 a:hover {
+    color: #f00;
+}
+h2 { font-size: 20px; margin-bottom: 1em; font-weight: 400; font-family: 'Montserrat' }
+h3 { font-size: 20px; margin-bottom: 1em; font-weight: 400; font-family: 'Montserrat' }
+h4 { font-size: 20px; margin-bottom: 1em; font-weight: 400; font-family: 'Montserrat' }
 
 /* paragraph width */
 #index p { margin-bottom: 1em; }
@@ -45,7 +70,7 @@ h4 { font-size: 13px; margin-bottom: 1em; }
 /* never adjust the margin or padding here unless you seriously know what you are doing */
 /* think #index .container and #exhibit .container for only padding adjustments */
 #index { width: 215px; background: #fff; /* line-height: 1.3em; */ }
-#exhibit { margin: 0 0 0 215px; }
+#exhibit { margin: 125px 0 0 215px; }
 
 /* styling the index */
 #index ul { list-style: none; margin: 0; }
@@ -68,6 +93,27 @@ li.active a:link, li a.active, li.active a:hover, li a.active, li.active a:activ
 li.active a:visited, li a.active, li span.active, #index ul.section li.active a:link, 
 #index ul.section li.active a:hover, #index ul.section li.active a:active, #index ul.section li.active a:visited
 { font-weight: bold; }
+
+li.active:before {
+    content: "\2023 ";
+}
+/*
+li.active:before, li a.active:before, li.active:before a:hover, li a.active:before, li.active:before a:active, li a.active:before,
+li.active:before a:visited, li a.active:before, li span.active:before, #index ul.section li.active:before a:link, 
+#index ul.section li.active:before a:hover, #index ul.section li.active:before a:active, #index ul.section li.active:before a:visited
+ {
+    content: "";
+    border-color: transparent #111;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.45em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: 0.9em;
+    position: relative;
+}
+*/
 
 /* additional #index options */
 #index ul li .password a { /* background: url(../img/locked.gif) right center no-repeat; padding-right: 18px; */ }
